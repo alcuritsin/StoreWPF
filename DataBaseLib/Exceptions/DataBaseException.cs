@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System;
 
+
 namespace DataBaseLib.Exceptions
 {
     public abstract class DataBaseException : Exception
@@ -15,9 +16,11 @@ namespace DataBaseLib.Exceptions
         }
 
         protected DataBaseException(string? message, TypeException typeException, string tableName) : base(message)
+
         {
             TypeException = typeException;
             TableName = tableName;
         }
     }
+
 }

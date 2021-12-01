@@ -21,6 +21,7 @@ namespace Store
 
         #region Constructors
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace Store
             Order = new ObservableCollection<OrderLine>();
             Products = new ObservableCollection<Product>(new DataBaseLib.DataBase().GetAllProducts());
         }
+        #endregion
+
 
         #endregion
 
@@ -67,6 +70,7 @@ namespace Store
         #region CreateCard
 
         private StackPanel CreateCard(Product product)
+
         {
             var cardImage = new Image
             {
@@ -127,6 +131,8 @@ namespace Store
             button.Click += Button_CardAmount_OnClick;
             return button;
         }
+        #endregion
+
 
         private void Button_CardAmount_OnClick(object sender, RoutedEventArgs e)
         {
@@ -150,6 +156,7 @@ namespace Store
         }
 
         #endregion
+
 
         private bool IsNewLine(string product)
         {

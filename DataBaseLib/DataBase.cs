@@ -21,9 +21,11 @@ namespace DataBaseLib
             var sql = $"SELECT * FROM {table_name}";
             var res = _db.ExecuteSelect(in sql, out var outputData);
 
+
             if (!res) throw new NoAnswerException(typeException: TypeException.NoAnswer, tableName: table_name, message:"Ответ из базы данных не был получен."); //DONE Продумать свой тип исключения
 
             if (!outputData.HasRows) throw new EmptyTableException(typeException: TypeException.EmptyTable, tableName: table_name, message: "Результат запроса вернул пустую таблицу."); //DONE Продумать свой тип исключения
+
 
             var products = new List<Product>();
             
